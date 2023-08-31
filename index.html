@@ -6,16 +6,24 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="./style.css" />
-    <!-- Import the list generation & item deletion logic: -->
-    <script src="./script.js"></script>
-    <!-- Import the CSS theme control logic: -->
-    <script src="./themeControl.js"></script>
   </head>
   <body>
     <h1>Welcome!</h1>
     <p>Some subheading goes here</p>
     <hr />
     <br />
+
+    <h2>(Real form)</h2>
+    <form>
+      <label>New item:</label>
+      <input type="text" id="real-nameinput" />
+      <h6 id="real-texthint">Not sure what to write? Check IMDB!</h6>
+      <button onclick="addItemToList(event)" id="real-formsubmit">
+        Submit new item
+      </button>
+    </form>
+
+    <hr />
 
     <h2>Favourite Media</h2>
     <ul id="mediaList" class="bananas"></ul>
@@ -25,6 +33,11 @@
     <button onclick="changeCSSTheme('light')">Change theme to light</button>
 
     <button onclick="toggleLightDark()">Toggle light/dark</button>
+
+    <!-- Import the list generation & item deletion logic: -->
+    <script src="./script.js"></script>
+    <!-- Import the CSS theme control logic: -->
+    <script src="./themeControl.js"></script>
 
     <script>
       exampleHello();
