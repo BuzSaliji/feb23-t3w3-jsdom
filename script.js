@@ -67,11 +67,11 @@ function removeItemFromList(targetItem) {
   }
 }
 
-function addItemToList(event) {
+function addItemToList(event, targetId) {
   event.preventDefault();
   console.log("we tried to add an item to the list!");
 
-  let realInputField = document.getElementById("real-nameinput");
+  let realInputField = document.getElementById(targetId);
   let newItemName = realInputField.value;
   if (newItemName) {
     console.log("newItemName is: " + newItemName);
@@ -86,22 +86,21 @@ function addItemToList(event) {
   }
 }
 
-let realFormSubmitButton = document.getElementById("real-formsubmit");
-realFormSubmitButton.addEventListener("click", addItemToList);
+// let realFormSubmitButton = document.getElementById("real-formsubmit");
+// realFormSubmitButton.addEventListener("click", (event) => {addItemToList(event, "real-nameinput")});
 // functionName() runs immediately, do not want!!
 // realFormSubmitButton.addEventListener("click", addItemToList());
 
 // helper text id: real-texthint
-
 function inputHelperOnFocus(targetId) {
-  let helperElement = document.getElementById("real-texthint");
-  console.log("Showing text hint now");
+  let helperElement = document.getElementById(targetId);
+  console.log("showing text hint now");
   helperElement.style.display = "inherit";
 }
 
 function inputHelperOnBlur(targetId) {
-  let helperElement = document.getElementById("real-texthint");
-  console.log("Showing text hint now");
+  let helperElement = document.getElementById(targetId);
+  console.log("hiding text hint now");
   helperElement.style.display = "none";
 }
 
@@ -122,3 +121,8 @@ pseudoFormTextInput.addEventListener("focusout", () => {
   inputHelperOnBlur("pseudo-texthint");
 });
 inputHelperOnBlur("pseudo-texthint");
+
+let pseudoFormButton = document.getElementById("pseudo-formsubmit");
+pseudoFormButton.addEventListener("click", (event) => {
+  addItemToList(event, "pseudo-nameinput");
+});

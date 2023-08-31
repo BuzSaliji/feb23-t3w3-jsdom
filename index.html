@@ -18,7 +18,10 @@
       <label>New item:</label>
       <input type="text" id="real-nameinput" />
       <h6 id="real-texthint">Not sure what to write? Check IMDB!</h6>
-      <button onclick="addItemToList(event)" id="real-formsubmit">
+      <button
+        onclick="addItemToList(event, 'real-nameinput')"
+        id="real-formsubmit"
+      >
         Submit new item
       </button>
     </form>
@@ -30,7 +33,6 @@
     <input type="text" id="pseudo-nameinput" />
     <h6 id="pseudo-texthint">Not sure what to write? Use a form!</h6>
     <button id="pseudo-formsubmit">Submit new item</button>
-
     <hr />
 
     <h2>Favourite Media</h2>
